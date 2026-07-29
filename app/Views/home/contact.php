@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Contato</title>
+    <title>Contact Page</title>
 </head>
 <body>
     <main>
-        <h1>Página Contato</h1>
+        <h1>Contact Page</h1>
 
-        <p>Olá</p>
+        <p>Name: <?= $name ?></p>
+        <p>Age: <?= $age ?></p>
+        <p>Email: <?= $email ?></p>
     </main>
 </body>
 </html>

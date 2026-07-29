@@ -7,9 +7,9 @@ class Usuario
     public function getUserData(): array
     {
         return [
-            'nome'  => 'Anderson',
-            'idade' => 20,
-            'email' => 'teste@email.com'
+            'name'  => 'Anderson',
+            'age' => 20,
+            'email' => 'teste@hotmail.com'
         ];
     }
 }

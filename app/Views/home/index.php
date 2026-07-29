@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>Home Page</title>
 </head>
 <body>
     <main>
-        <h1>Página Inicial</h1>
+        <h1>Home Page</h1>
 
-        <p>Hello World</p>
-
-        <p>Nome: <?= $nome ?></p>
-        <p>Idade: <?= $idade ?></p>
-        <p>E-mail: <?= $email ?></p>
+        <p>Name: <?= $name ?></p>
+        <p>Age: <?= $age ?></p>
+        <p>Email: <?= $email ?></p>
     </main>
 </body>
 </html>
