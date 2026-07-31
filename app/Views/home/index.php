@@ -9,9 +9,8 @@
     <main>
         <h1>Home Page</h1>
 
-        <p>Name: <?= $name ?></p>
-        <p>Age: <?= $age ?></p>
-        <p>Email: <?= $email ?></p>
+        <p>Name: <?= $nome_usuario ?></p>
+        <p>Email: <?= $email_usuario ?></p>
     </main>
 </body>
 </html>

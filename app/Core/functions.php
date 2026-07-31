@@ -3,7 +3,7 @@
 /**
  * Dump and die
  */
-function dd()
+function dd(): never
 {
     $args = func_get_args();
 
@@ -21,4 +21,10 @@ function dd()
     echo '<pre>';
 
     die();
+}
+
+function config(string $key, $default = null): string | array
+{
+    $config = require_once __DIR__ . '/../config/config.php';
+    return $config[$key] ?? $default;
 }

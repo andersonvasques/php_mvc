@@ -6,7 +6,7 @@ use App\Controllers\Errors\HttpErrorController;
 
 class Controller
 {
-    protected function view(string $view, array $viewData = []): void
+    protected function view(string $view, array | object $viewData = []): void
     {
         extract($viewData);
 
