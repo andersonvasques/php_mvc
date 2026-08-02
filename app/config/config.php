@@ -1,13 +1,14 @@
 <?php
 
-$env = require_once __DIR__ . '/../../env.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 
 return [
     'database' => [
-        'host'     => $env['host'],
-        'dbname'   => $env['dbname'],
-        'username' => $env['username'],
-        'password' => $env['password'],
-        'charset'  => $env['charset'],
+        'host'     => $_ENV['DATABASE_URL'],
+        'dbname'   => $_ENV['DATABASE_NAME'],
+        'username' => $_ENV['DATABASE_USER'],
+        'password' => $_ENV['DATABASE_PASSWORD'],
+        'charset'  => $_ENV['DATABASE_CHARSET'],
     ],
 ];
