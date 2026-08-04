@@ -3,13 +3,14 @@
 namespace App\Core;
 
 use App\Controllers\Errors\HttpErrorController;
+use Symfony\Component\HttpFoundation\Request;
 
 class Router extends Controller
 {
-    public function dispatch(string $url): void
+    public function dispatch(Request $request): void
     {
         // Removendo a / inicial e final
-        $url            = trim($url, '/');
+        $url            = trim($request->query->get('url', ''), '/');
 
         /*
             Se existir uma url, então vai pegar essa url e se existir
@@ -41,6 +42,7 @@ class Router extends Controller
         }
 
         $controller = new $controllerClass();
+        $this->wireRequest($controller, $request);
         $actionName = $parts[1] ?? 'index';
 
         if (!method_exists($controller, $actionName)) {
@@ -52,5 +54,12 @@ class Router extends Controller
         $params = array_slice($parts, 2);
 
         call_user_func_array([$controller, $actionName], $params);
+    }
+
+    private function wireRequest(object $controller, Request $request): void
+    {
+        if ($controller instanceof Controller) {
+            $controller->setRequest($request);
+        }
     }
 }
